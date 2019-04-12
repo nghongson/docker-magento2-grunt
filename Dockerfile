@@ -1,6 +1,6 @@
 ARG NODE_VERSION=10
 ARG PHP_VERSION=7.2
-FROM node:${NODE_VERSION}
+FROM node:${NODE_VERSION}-slim
 WORKDIR "/public_html"
 RUN apt-get update
 
