@@ -1,0 +1,20 @@
+#!/bin/sh
+set -ex
+
+if [ ! -f "package.json" ];
+then
+   cp package.json.sample package.json
+fi
+
+if [ ! -f "Gruntfile.js" ];
+then
+  cp Gruntfile.js.sample Gruntfile.js
+fi
+
+if [ ! -d "node_modules" ];
+then
+  npm install
+  npm update
+fi
+
+exec "$@"
